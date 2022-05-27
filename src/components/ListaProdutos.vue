@@ -39,7 +39,7 @@
         </table>
       </div>
       <div v-else>
-            <SpinnerCir/>
+        <SpinnerCir />
       </div>
     </div>
 
@@ -52,13 +52,11 @@ import axios from "axios";
 
 import SpinnerCir from "./SpinnerCir.vue";
 
-
 export default {
   name: "ListaProdutos",
   components: {
     SpinnerCir,
-   
-},
+  },
   data() {
     return {
       produtos: null,
@@ -88,7 +86,6 @@ export default {
         });
     },
     deleteProduto(id_produto, nome_produto) {
-      
       axios
         .delete(`${this.url}api/deleteProduct/${id_produto}`)
         .then((response) => {
@@ -136,11 +133,10 @@ article .column-center {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  /* border: 1px solid #ddd; */
 }
 
 .box caption {
-  font-size: 30px;
+  font-size: 2rem;
 }
 .box thead {
   background-color: black;
@@ -155,7 +151,7 @@ article .column-center {
   text-align: center;
   padding: 8px;
   font-size: 20px;
-  border-block-end: 2px solid black;
+  border-block-end: 1px solid black;
 }
 
 .box img {
@@ -164,7 +160,6 @@ article .column-center {
 }
 
 .box button {
-  margin-bottom: 10px;
   color: white;
   font-weight: bold;
   height: 40px;
@@ -186,6 +181,24 @@ article .column-center {
   article .column-center {
     background-color: rgb(176, 171, 171);
     width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .box caption {
+    font-size: 2rem;
+  }
+  .box th {
+    padding: 3px;
+    font-size: 20px;
+  }
+  .box td {
+    padding: 4px;
+    font-size: 15px;
+  }
+
+  .box img {
+    width: 40px;
+    height: 40px;
   }
 }
 </style>
